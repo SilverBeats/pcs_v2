@@ -1,0 +1,41 @@
+atomic_file_path: ./data/atomic_events.jsonl
+output_dir: ./output
+
+llm_name: 
+llm_config:
+  deepseek-r1:
+    models:
+      - deepseek-r1-250528
+    api_bases:
+      - https://ark.cn-beijing.volces.com/api/v3
+    api_keys:
+      - <your api key>
+
+  doubao-seed:
+    models:
+      - doubao-seed-1.6-250615
+    api_bases:
+      - https://ark.cn-beijing.volces.com/api/v3
+    api_keys:
+      - <your api key>
+
+  qwen-turbo:
+    models:
+      - qwen-turbo
+    api_bases:
+      - https://dashscope.aliyuncs.com/compatible-mode/v1
+    api_keys:
+      - <your api key>
+
+generation_config:
+  seed: 42
+  temperature: 0
+  top_p: 0
+  stream: false
+  response_format:
+    type: json_object
+
+num_workers: 100
+threshold: 6
+
+select_event_relation_pairs: true

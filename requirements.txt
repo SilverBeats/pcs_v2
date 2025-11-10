@@ -1,0 +1,5 @@
+git+https://github.com/silverbeats/easy_tools.git
+openai
+pandas
+numpy
+json_repair
