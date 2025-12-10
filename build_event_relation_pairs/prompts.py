@@ -1,5 +1,7 @@
-from easy_tools.llms.prompt import PromptTemplate
-from tools import parse_to_json
+from lwj_tools.llms.prompt import PromptTemplate
+import json
+from json_repair import repair_json
+
 
 class RateEventRelationPrompt(PromptTemplate):
     prompt = """
@@ -64,4 +66,5 @@ Output format is JSON
         return self.prompt.format(EVENT=event).strip()
 
     def parse_fn(self, llm_response):
-        return parse_to_json(llm_response)
+        resp = json.loads(repair_json(llm_response, ensure_ascii=False))
+        return resp

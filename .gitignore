@@ -1,4 +1,34 @@
-**/.vscode
-**/.idea
+# IDE and Editor files
+**/.vscode/
+**/.idea/
+*.swp
+*.swo
+
+# System files
 **/.DS_Store
-**/output/**
+**/Thumbs.db
+.DS_Store
+
+# Build outputs
+**/output/
+
+# Common build directories and dependencies
+node_modules/
+dist/
+build/
+.out/
+.next/
+.nuxt/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env*.local
+.env
+
+# IDE specific files
+.vscode/
+.idea/

@@ -1,0 +1,63 @@
+output_dir: ./output
+seed: 42
+
+event_relation_pair_file_path: ../build_event_relation_pairs/output/event_relation_pairs_threshold_6.jsonl
+role_file_path: ./data/role.jsonl
+sample_role: true
+max_workers: 150
+debate_rounds: 1
+max_rewrite_num: 2
+
+writer_client:
+  models:
+    - doubao-1.5-pro-32k-character-250228
+  api_keys:
+    - <API_KEY>
+  api_bases:
+    - https://ark.cn-beijing.volces.com/api/v3
+  generation_config:
+    seed: 42
+    temperature: 1.0
+    top_p: 0.7
+    response_format:
+      type: json_object
+
+affirmative_client:
+  models:
+    - doubao-seed-1.6-flash-250615
+  api_keys:
+    - <API_KEY>
+  api_bases:
+    - 'https://ark.cn-beijing.volces.com/api/v3'
+  generation_config:
+    seed: 42
+    temperature: 0
+    top_p: 0
+
+negative_client:
+  models:
+    - doubao-seed-1.6-flash-250615
+  api_keys:
+    - <API_KEY>
+  api_bases:
+    - 'https://ark.cn-beijing.volces.com/api/v3'
+  generation_config:
+    seed: 42
+    temperature: 0
+    top_p: 0
+
+chairman_client:
+  models:
+    - doubao-seed-1.6-flash-250615
+  api_keys:
+    - <API_KEY>
+  api_bases:
+    - 'https://ark.cn-beijing.volces.com/api/v3'
+  generation_config:
+    seed: 42
+    temperature: 0
+    top_p: 0
+    response_format:
+      type: json_object
+
+

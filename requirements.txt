@@ -1,5 +1,8 @@
-git+https://github.com/silverbeats/easy_tools.git
+git+https://github.com/silverbeats/lwj_tools.git@develop
+transformers
 openai
-pandas
-numpy
-json_repair
+matplotlib
+seaborn
+nltk
+scikit-learn
+scipy
