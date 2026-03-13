@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
 import os
 import random
+import traceback
 from functools import partial
 from typing import List
 
+from lwj_tools.io.reader import FileReader
 from lwj_tools.llms.client import APIConfig, LLMClientGroup
+from lwj_tools.utils.common import get_file_name_and_ext, get_logger
 from lwj_tools.utils.concurrent import MultiThreadingRunner
-from lwj_tools.utils.io import FileReader
-from lwj_tools.utils.tools import get_file_name_and_ext, get_logger
 from transformers import set_seed
 
 from debate import DebateFramework

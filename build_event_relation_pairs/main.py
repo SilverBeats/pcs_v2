@@ -2,22 +2,24 @@
 # -*- coding: utf-8 -*-
 
 """Dataset Construction"""
-import threading
-from functools import partial
-from collections import defaultdict, Counter
-from lwj_tools.utils.io import FileReader, FileWriter
+import json
 import os
-from lwj_tools.utils.tools import (
-    get_dir_file_path,
-    get_unprocessed_samples,
-    get_file_name_and_ext,
-)
-from lwj_tools.llms.client import APIConfig, LLMClientGroup
+import threading
+from collections import Counter, defaultdict
+from functools import partial
+
+from lwj_tools.io.reader import FileReader
+from lwj_tools.io.writer import FileWriter
 from lwj_tools.llms.chain import LLMChain
-from prompts import RateEventRelationPrompt
+from lwj_tools.llms.client import APIConfig, LLMClientGroup
+from lwj_tools.utils.common import (
+    get_dir_file_path,
+    get_file_name_and_ext,
+    get_unprocessed_samples,
+)
 from lwj_tools.utils.concurrent import MultiThreadingRunner
 
-import json
+from prompts import RateEventRelationPrompt
 
 CONFIG_FILE_PATH = "./config.yaml"
 LOCK = threading.Lock()
@@ -149,7 +151,7 @@ def main():
             runner(
                 samples=samples,
                 worker_func=partial(_worker_func, model=chain, fp=fp),
-                desc=f"{llm_name} Rating",
+                pbar_desc=f"{llm_name} Rating",
             )
 
     print("Calculate score statistics")

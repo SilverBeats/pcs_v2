@@ -1,4 +1,4 @@
-git+https://github.com/silverbeats/lwj_tools.git@develop
+git+https://github.com/silverbeats/lwj_tools.git
 transformers
 openai
 matplotlib

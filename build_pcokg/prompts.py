@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import json
-from typing import List, Optional, Tuple, Union
+from typing import List, Tuple
+
 from json_repair import repair_json
 from lwj_tools.llms.prompt import PromptTemplate
-from .constant import RELATION_TO_QUESTION, RELATION_FOR_APPLICATION
+
+from .constant import RELATION_FOR_APPLICATION, RELATION_TO_QUESTION
 
 __all__ = [
     "EventRaterPromptTemplate",
