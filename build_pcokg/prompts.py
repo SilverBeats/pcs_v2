@@ -20,11 +20,7 @@ __all__ = [
     "RPAffirmativeSysPromptTemplate",
     "RPAffirmativeUserPromptTemplate",
     "RPNegativeSysPromptTemplate",
-    "RPNegativeUserPromptTemplate",
-    "DialogApplicationPromptTemplate",
-    "EmotionApplicationPromptTemplate",
-    "SentimentApplicationPromptTemplate",
-    "DialogEmotionApplicationPromptTemplate",
+    "RPNegativeUserPromptTemplate"
 ]
 
 
